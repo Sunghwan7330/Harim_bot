@@ -12,7 +12,7 @@ szLastFileCache="cache.dat"
 szPDF_URL=""
 szUTF8_Name=""
 PDF_FILE_NAME="menu_pdf.pdf"
-TXT_FILE_NAME="menu_text.pdf"
+TXT_FILE_NAME="menu_text.txt"
 
 def download(url, file_name):
   with open(file_name, "wb") as file:   # open in binary mode
