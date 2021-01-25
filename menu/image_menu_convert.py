@@ -53,7 +53,8 @@ class ImageMenuConvert():
 
 def main():
     output_filename = 'target.jpg'
-    pages = convert_from_path('target.pdf', 500)
+    #pages = convert_from_path('target.pdf', 500)
+    pages = convert_from_path('menu_pdf.pdf', 500)
     for page in pages:
         page.save(output_filename, 'JPEG')
 
