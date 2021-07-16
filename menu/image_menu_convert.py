@@ -2,7 +2,7 @@ import cv2
 from pdf2image import convert_from_path
 
 class ImageMenuConvert():
-    day_array = ['mom', 'tue', 'wen', 'thu', 'fri']
+    day_array = ['mon', 'tue', 'wen', 'thu', 'fri']
     output_file = '{}_{}_{}.jpg'
 
     name_lunch = 'lunch'
@@ -48,6 +48,17 @@ class ImageMenuConvert():
             #print("({}:{}, {}:{})".format(yy, height, xx + (width * i), xx + (width * (i + 1))))
             dst = src[yy:height, xx + (width * i):xx + (width * (i + 1))]
             filename = self.output_file.format(self.day_array[i], "lunch", "salad")
+            cv2.imwrite('{}/{}'.format(res_path, filename), dst)
+
+        xx = 480
+        yy = 1500
+        height = yy + 1070
+
+        # all menu
+        for i in range(0, 5):
+            #print("({}:{}, {}:{})".format(yy, height, xx + (width * i), xx + (width * (i + 1))))
+            dst = src[yy:height, xx + (width * i):xx + (width * (i + 1))]
+            filename = self.output_file.format(self.day_array[i], "lunch", "all")
             cv2.imwrite('{}/{}'.format(res_path, filename), dst)
 
 
